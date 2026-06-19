@@ -1,7 +1,8 @@
 #include <iostream>
+#include "funcoes.h" // para incluir o arquivo que contem o guia das funções :)
 
 using namespace std;
-
+// introdução so pra ficar mais bonitinho
 void introducao() {
     cout << "=======================================================================================================================================" << endl << endl;
 
@@ -30,50 +31,59 @@ void menu(){
 
     switch (escolha){
         case 1:
-
+        
+        inserirTime();
         // função 1
-
+        
         break;
-
+        
         case 2:
-
+        
         //função 2
-
+        removerTime();
+        
         break;
-
+        
         case 3: 
-
+        
         //função 3
-
+        buscarTime();
+        
         break;
-
+        
         case 4:
-
+        
         // função 4
-
+        listarTimes();
+        
         break;
-
+        
         case 5:
-
+        
         //função 5
-
+        exibirIntervalo();
+        
         break;
-
+        
         case 6:
-
+        
         //função 6
-
+        ordenarRegistros();
+        
         break;
-
+        
         case 7:
-
+        
         //função 7
-
+        salvarAlteracoes();
+        
         break;
-
+        
         case 0:
 
-       return;
+      saida();
+
+        return;// para parar o menu
 
        default:
     cout << "Opcao invalida!" << endl;
@@ -83,7 +93,7 @@ void menu(){
 }while(escolha !=0);
 
 }
-
+// fraze so para o programa não encerrar seco
 void saida(){
     cout<<endl<<"Obrigado por usar nosso programa!";
 
@@ -91,8 +101,11 @@ void saida(){
 
 
 int main(){
+
+    carregarArquivo();
    introducao();
-   menu();
-   saida(); 
+    menu();
+   saida();  
+
     return 0;
 }
