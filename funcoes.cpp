@@ -102,3 +102,189 @@ void inserirTime() {
     cout << "Time inserido com sucesso!" << endl;
 }
 
+// 2. Remover dados existentes 
+void removerTime() {
+    int idBusca;
+    cout << "Digite o ID do time que deseja remover: ";
+    cin >> idBusca;
+
+    for (int i = 0; i < tamanhoAtual; i++) {
+        if (times[i].identificador == idBusca) {
+            // Marca com chave negativa 
+            times[i].identificador = -1; 
+            cout << "Time removido logicamente com sucesso!" << endl;
+            return;
+        }
+    }
+    cout << "Time com ID " << idBusca << " nao encontrado." << endl;
+}
+
+// 3. Buscar time (Busca Binária no vetor ordenado por ID)
+void buscarTime() {
+    int idBusca;
+    cout << "Digite o ID do time para busca binaria: ";
+    cin >> idBusca;
+
+    // Selection sort para garantir ordenação antes da busca binária
+    for (int i = 0; i < tamanhoAtual - 1; i++) {
+
+        //minIdx == menor id encontrado
+        int minIdx = i;
+        // estrutura de repetição
+        for (int j = i + 1; j < tamanhoAtual; j++) {
+            //se time na posição j for menor que times na menor posição achada o minimo vira j, . identificador e so pra puxar qual parte da struct a gente ta olhando
+            if (times[j].identificador < times[minIdx].identificador) {
+                minIdx = j;
+            }
+        }
+        // criamos uma variavel temporaria para não perder dados e igualamos ao menor indice 
+        Time temp = times[minIdx];
+    
+        times[minIdx] = times[i];
+        times[i] = temp;
+    }
+
+    // busca binária
+    int inicio = 0, fim = tamanhoAtual - 1;
+    bool encontrado = false;
+
+    //formula padrao da busca binaria
+    while (inicio <= fim) {
+        int meio = (inicio + fim) / 2;       
+         if (times[meio].identificador == idBusca) {
+            cout << "\nTime Encontrado:" << endl;
+            cout << "ID: " << times[meio].identificador 
+                 << " | Nome: " << times[meio].nome 
+                 << " | Cidade: " << times[meio].cidade << endl;
+            encontrado = true;
+            break;
+        }
+        if (times[meio].identificador < idBusca) {
+            inicio = meio + 1;
+        } else {
+            fim = meio - 1;
+        }
+    }
+
+    if (!encontrado) {
+        cout << "Time nao encontrado." << endl;
+    }
+}
+
+// 4. Listar todos os times
+void listarTimes() {
+    // segurança pra caso não tenha times cadastrados
+    if (tamanhoAtual == 0) {
+        cout << "Nenhum time cadastrado." << endl;
+        return;
+    }
+    //se não
+
+    cout << "\n--- Lista Completa de Times ---" << endl;
+    for (int i = 0; i < tamanhoAtual; i++) {
+        // Ignora itens removidos logicamente
+        if (times[i].identificador == -1) continue; 
+        cout << "ID: " << times[i].identificador 
+             << " | Nome: " << times[i].nome 
+             << " | Divisao: " << times[i].divisao 
+             << " | Cidade: " << times[i].cidade 
+             << " | Fundacao: " << times[i].fundacao 
+             << " | Titulos: " << times[i].titulos << endl;
+    }
+    cout << "-------------------------------" << endl;
+}
+
+
+// 5. Exibir intervalo de registros
+void exibirIntervalo() {
+    int inicio, fim;
+    cout << "Digite o indice inicial (ex: 1): ";
+    cin >> inicio;
+    cout << "Digite o indice final (ex: 10): ";
+    cin >> fim;
+
+    // como o indice começa em 0 e não e natural o ser humano considerar o 0 tiramos 1 do indice de inicio e fim pra contarmos com a posição 0
+    inicio--; 
+    fim--;
+// segurança pra travar caso a entrada seja invalida (inicio-0) (o fim ser maior que o tamanho atual ) ou (inicio maior que o fim)
+    if (inicio < 0 || fim >= tamanhoAtual || inicio > fim) {
+        cout << "Intervalo invalido." << endl;
+        return;
+    }
+
+    cout << "\n--- Intervalo [" << (inicio + 1) << " a " << (fim + 1) << "] ---" << endl;
+    for (int i = inicio; i <= fim; i++) {
+        if (times[i].identificador == -1) continue;
+        cout << times[i].identificador << " | " 
+             << times[i].nome << " | " 
+             << times[i].divisao << " | " 
+             << times[i].cidade << " | " 
+             << times[i].fundacao << " | " 
+             << times[i].titulos << endl;
+    }
+}
+
+// 6. Ordenar registros na memória (Selection Sort)
+void ordenarRegistros() {
+    // menu pra escolher a forma de ordenar
+    int escolhaCampo;
+    cout << "Ordenar por qual campo?" << endl;
+    cout << "1 - Identificador (ID)" << endl;
+    cout << "2 - Nome (Ordem Alfabetica)" << endl;
+    cout << "3 - Divisao" << endl;
+    cout << "4 - Cidade" << endl;
+    cout << "5 - Ano de Fundacao" << endl;
+    cout << "6 - Quantidade de Titulos" << endl;
+    cout << "Escolha: ";
+    cin >> escolhaCampo;
+
+    for (int i = 0; i < tamanhoAtual - 1; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < tamanhoAtual; j++) {
+            
+            // Uma cadeia de 'if / else if' para testar qual foi a escolha do usuario
+            if (escolhaCampo == 1) {
+                if (times[j].identificador < times[minIdx].identificador) minIdx = j;
+            } 
+            else if (escolhaCampo == 2) {
+                if (times[j].nome < times[minIdx].nome) minIdx = j;
+            } 
+            else if (escolhaCampo == 3) {
+                if (times[j].divisao < times[minIdx].divisao) minIdx = j;
+            } 
+            else if (escolhaCampo == 4) {
+                if (times[j].cidade < times[minIdx].cidade) minIdx = j;
+            } 
+            else if (escolhaCampo == 5) {
+                if (times[j].fundacao < times[minIdx].fundacao) minIdx = j;
+            } 
+            else if (escolhaCampo == 6) {
+                if (times[j].titulos < times[minIdx].titulos) minIdx = j;
+            }
+        }
+        
+        // A troca continua a mesma
+        Time temp = times[minIdx];
+        times[minIdx] = times[i];
+        times[i] = temp;
+    }
+    cout << "Registros ordenados com sucesso na memoria!" << endl;
+}
+
+// 7. Salvar alterações no arquivo e exclusão física dos removidos logicamente
+void salvarAlteracoes() {
+    ofstream arquivo(NOME_ARQUIVO);
+    for (int i = 0; i < tamanhoAtual; i++) {
+        // Grava apenas os elementos que nao foram marcados como deletados
+        if (times[i].identificador != -1) {
+            arquivo << times[i].identificador << ";"
+                    << times[i].nome << ";"
+                    << times[i].divisao << ";"
+                    << times[i].cidade << ";"
+                    << times[i].fundacao << ";"
+                    << times[i].titulos << "\n";
+        }
+    }
+    arquivo.close();
+    cout << "Alteracoes salvas no arquivo " << NOME_ARQUIVO << " com sucesso!" << endl;
+}
