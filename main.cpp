@@ -86,21 +86,33 @@ void menu(){
         salvarAlteracoes();
         
         break;
-        case 0:
+        
+        case 0: {
 
-     
+        char confirmacao;
+        // aviso so pra garantir de o usuario não esquecer de salvar
+        cout << "Deseja salvar as alteracoes antes de sair? (s/n): ";
+        cin >> confirmacao;
 
-        return;// para parar o menu
-
+        if (confirmacao == 's' || confirmacao == 'S') {
+        salvarAlteracoes();
+        } else {
+        cout << "Saindo sem salvar..." << endl;
+        }
+        return;
+}
        default:
-    cout << "Opcao invalida!" << endl;
-    break;
+
+        cout << "Opcao invalida!" << endl;
+        cin.clear();            // Limpa o erro do cin
+        cin.ignore(1000, '\n');  // Descarta o que foi digitado de errado
+        break;
 
 } 
 }while(escolha !=0);
 
 }
-// fraze so para o programa não encerrar seco
+// frase so para o programa não encerrar seco
 void saida(){
     cout<<endl<<"Obrigado por usar nosso programa!";
 
