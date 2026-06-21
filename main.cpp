@@ -25,7 +25,8 @@ void menu(){
     cout<< "4- Lista completa"<<endl;
     cout<< "5- Exibir intervalo de registros"<<endl;
     cout<< "6- Ordenar registros"<<endl;
-    cout<< "7- Salvar alterações"<<endl;
+    cout<< "7- Alterar registro"<<endl;
+    cout<< "8- Salvar alterações"<<endl;
     cout<< "0- Sair"<<endl;
     cin>> escolha;
 
@@ -75,13 +76,19 @@ void menu(){
         case 7:
         
         //função 7
-        salvarAlteracoes();
+        alterarRegistro();
         
         break;
         
+        case 8:
+        
+        //função 8
+        salvarAlteracoes();
+        
+        break;
         case 0:
 
-      saida();
+     
 
         return;// para parar o menu
 
@@ -103,9 +110,10 @@ void saida(){
 int main(){
 
     carregarArquivo();
-   introducao();
+    introducao();
     menu();
-   saida();  
+    liberarMemoria();
+    saida();  
 
     return 0;
 }

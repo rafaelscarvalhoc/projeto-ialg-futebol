@@ -16,12 +16,16 @@ struct Time {
 void inserirTime();
 void removerTime();
 void buscarTime();
+void buscarTimeLinear();    
+void buscarTimebinaria();
 void listarTimes();
 void exibirIntervalo();
 void ordenarRegistros();
+void alterarRegistro();
 void salvarAlteracoes();
 void introducao();
 void menu();
+void liberarMemoria();
 void saida();
 void carregarArquivo();
 

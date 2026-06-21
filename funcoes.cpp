@@ -25,9 +25,18 @@ void carregarArquivo() {
 
     string linha; // variavel vzia ela que vai pegar a linha atual do codigo
 
-    while (getline(arquivo, linha) && tamanhoAtual < capacidade) {
+    while (getline(arquivo, linha)) {
         if (linha.empty()) continue; // como a propria linha fala se ela ta vazia continua
         
+        if (tamanhoAtual >= capacidade) { // se o tamanho for maior ou igual a capacidade
+            capacidade += 10; //adiciona 10 na capacidade
+            Time *novoVetor = new Time[capacidade]; //cria o vetor time com a nova capacidade
+            for (int i = 0; i < tamanhoAtual; i++) { // preenche o novo vertor
+                novoVetor[i] = times[i]; 
+            }
+            delete[] times; //deleta o vertor antigo 
+            times = novoVetor; //iguala o antigo ao novo e segue o programa
+        }
         stringstream ss(linha);
         // o ssstream pega toda a linha e para nos ; então criamos variaveis temporarias para pegar o valor da string correspodente
         string idStr, fundacaoStr, titulosStr;
@@ -49,15 +58,6 @@ void carregarArquivo() {
         tamanhoAtual++;
 
         // Redimensiona se prescisar
-        if (tamanhoAtual >= capacidade) { // se o tamanho for maior ou igual a capacidade
-            capacidade += 10; //adiciona 10 na capacidade
-            Time *novoVetor = new Time[capacidade]; //cria o vetor time com a nova capacidade
-            for (int i = 0; i < tamanhoAtual; i++) { // preenche o novo vertor
-                novoVetor[i] = times[i]; 
-            }
-            delete[] times; //deleta o vertor antigo 
-            times = novoVetor; //iguala o antigo ao novo e segue o programa
-        }
     }
     // fechando o arquivo
     arquivo.close();
@@ -84,6 +84,22 @@ void inserirTime() {
     Time novoTime;
     cout << "Digite o ID (inteiro positivo diferente de -1): ";
     cin >> novoTime.identificador;
+
+    // Verifica se o ID e invalido
+    if (novoTime.identificador == -1) {
+    cout << "ID invalido! O valor -1 e reservado para remocao logica." << endl;
+    return;
+    }
+
+    // Verifica se o ID e repetido
+    for (int i = 0; i < tamanhoAtual; i++) {
+
+    if (times[i].identificador == novoTime.identificador) {
+        cout << "Ja existe um time com esse ID!" << endl;
+        return;
+        }
+    }
+    
     cin.ignore(); // Limpa o buffer do enter
     cout << "Digite o Nome (string com espacos): ";
     getline(cin, novoTime.nome);
@@ -119,12 +135,76 @@ void removerTime() {
     cout << "Time com ID " << idBusca << " nao encontrado." << endl;
 }
 
-// 3. Buscar time (Busca Binária no vetor ordenado por ID)
+// menu pra selecionar o metodo de busca
 void buscarTime() {
+    cout<<"Obs: caso você escolha a busca binaria sera feito uma ordenação baseada em ids para garantir o funcionamento da busca binaria";
+while (true) {
+    int escolha;
+
+    cout <<endl<<"1- Busca linear";
+    cout <<endl<<"2- Busca binaria";
+    cout <<endl<<"0- Voltar"<<endl;
+
+    cin >> escolha;
+
+    if (escolha == 1) {
+        buscarTimeLinear();
+        return;
+    }
+
+    if (escolha == 2) {
+        buscarTimebinaria();
+        return;
+    }
+
+    if (escolha == 0) {
+        return;
+    }
+
+    cout <<endl<< "Opcao invalida!"<<endl<<"Por favor tente novamente!"<<endl;
+    }
+}
+
+void buscarTimeLinear() {
     int idBusca;
-    cout << "Digite o ID do time para busca binaria: ";
+    cout << "Digite o ID do time para busca linear: ";
     cin >> idBusca;
 
+    bool encontrado = false;
+
+    // Loop simples: olha do início  até o último que e o tamanho atual
+    for (int i = 0; i < tamanhoAtual; i++) {
+        // Ignora removidos logicamente
+        if (times[i].identificador == -1) continue; 
+
+        // Se achar o ID, imprime e para
+        if (times[i].identificador == idBusca) {
+            cout << "\nTime Encontrado na posicao " << i << ":" << endl;
+            cout << "ID: " << times[i].identificador 
+                 << " | Nome: " << times[i].nome 
+                 << " | Divisao: " << times[i].divisao 
+                 << " | Cidade: " << times[i].cidade 
+                 << " | Fundacao: " << times[i].fundacao 
+                 << " | Titulos: " << times[i].titulos << endl;
+            encontrado = true;
+            break; // Sai do loop assim que encontrar
+        }
+    }
+
+    if (!encontrado) {
+        cout << "Time nao encontrado na busca linear." << endl;
+    }
+}
+
+
+
+// 3. Buscar time (Busca Binária no vetor ordenado por ID)
+void buscarTimebinaria() {
+    int idBusca;
+    cout << "Digite o ID do time para busca binaria: ";
+    
+    cin >> idBusca;
+    
     // Selection sort para garantir ordenação antes da busca binária
     for (int i = 0; i < tamanhoAtual - 1; i++) {
 
@@ -152,10 +232,13 @@ void buscarTime() {
     while (inicio <= fim) {
         int meio = (inicio + fim) / 2;       
          if (times[meio].identificador == idBusca) {
-            cout << "\nTime Encontrado:" << endl;
-            cout << "ID: " << times[meio].identificador 
-                 << " | Nome: " << times[meio].nome 
-                 << " | Cidade: " << times[meio].cidade << endl;
+            cout << "\nTime Encontrado!" << endl;
+    cout << "ID: " << times[meio].identificador 
+         << " | Nome: " << times[meio].nome 
+         << " | Divisao: " << times[meio].divisao 
+         << " | Cidade: " << times[meio].cidade 
+         << " | Fundacao: " << times[meio].fundacao 
+         << " | Titulos: " << times[meio].titulos << endl;
             encontrado = true;
             break;
         }
@@ -271,6 +354,55 @@ void ordenarRegistros() {
     cout << "Registros ordenados com sucesso na memoria!" << endl;
 }
 
+void alterarRegistro() {
+    int idBusca;
+    cout << "\n--- Alterar Registro ---" << endl;
+    cout << "Digite o ID do time que deseja alterar: ";
+    cin >> idBusca;
+
+    bool encontrado = false;
+    // ta sendo procurada com uma busca sequencial
+    // foi pensado em usar busca binaria nesta função (alterar registro) contudo seria nescessario ordenar e poderia aver erros caso o id do clube fosse alterado
+    for (int i = 0; i < tamanhoAtual; i++) {
+        // Ignora removidos logicamente
+        if (times[i].identificador == -1) continue;
+
+        if (times[i].identificador == idBusca) {
+            encontrado = true;
+            cout << "Time encontrado: " << times[i].nome << endl;
+            
+            cout << "Qual campo deseja alterar?" << endl;
+            cout << "1- Nome\n2- Divisao\n3- Cidade\n4- Fundacao\n5- Titulos\nEscolha: ";
+            int opcao;
+            cin >> opcao;
+
+            // Limpa a entrada do teclado para não dar erro na leitura de strings
+            cin.ignore(); 
+
+            switch(opcao) {
+                case 1: 
+                    cout << "Novo Nome: "; getline(cin, times[i].nome); break;
+                case 2: 
+                    cout << "Nova Divisao: "; getline(cin, times[i].divisao); break;
+                case 3: 
+                    cout << "Nova Cidade: "; getline(cin, times[i].cidade); break;
+                case 4: 
+                    cout << "Novo Ano de Fundacao: "; cin >> times[i].fundacao; break;
+                case 5: 
+                    cout << "Nova Quantidade de Titulos: "; cin >> times[i].titulos; break;
+                default: 
+                    cout << "Opcao invalida!" << endl; return;
+            }
+            cout << "Registro atualizado com sucesso!" << endl;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        cout << "Time com ID " << idBusca << " nao encontrado." << endl;
+    }
+}
+
 // 7. Salvar alterações no arquivo e exclusão física dos removidos logicamente
 void salvarAlteracoes() {
     ofstream arquivo(NOME_ARQUIVO);
@@ -287,4 +419,8 @@ void salvarAlteracoes() {
     }
     arquivo.close();
     cout << "Alteracoes salvas no arquivo " << NOME_ARQUIVO << " com sucesso!" << endl;
+}
+void liberarMemoria() {
+    delete[] times;
+    times = nullptr;
 }
