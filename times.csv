@@ -1,100 +1,100 @@
-1;Flamengo;Serie A;Rio de Janeiro;1895;25
-2;Palmeiras;Serie A;Sao Paulo;1914;22
-3;Cruzeiro;Serie B;Belo Horizonte;1921;15
-4;Sao Paulo;Serie A;Sao Paulo;1930;21
-5;Santos;Serie B;Santos;1912;22
-6;Gremio;Serie A;Porto Alegre;1903;20
-7;Internacional;Serie A;Porto Alegre;1909;18
-8;Fluminense;Serie A;Rio de Janeiro;1902;19
-9;Vasco da Gama;Serie B;Rio de Janeiro;1898;17
-10;Botafogo;Serie A;Rio de Janeiro;1904;16
-11;Corinthians;Serie A;Sao Paulo;1910;24
-12;Atletico Mineiro;Serie A;Belo Horizonte;1908;18
-13;Bahia;Serie A;Salvador;1931;12
-14;Vitoria;Serie A;Salvador;1899;10
-15;Fortaleza;Serie A;Fortaleza;1918;8
-16;Ceara;Serie B;Fortaleza;1914;7
-17;Sport;Serie B;Recife;1905;9
-18;Santa Cruz;Serie C;Recife;1914;6
-19;Nautico;Serie B;Recife;1901;5
-20;Coritiba;Serie B;Curitiba;1909;11
-21;Athletico Paranaense;Serie A;Curitiba;1924;14
-22;Goias;Serie B;Goiania;1943;9
-23;Atletico Goianiense;Serie A;Goiania;1937;7
-24;Cuiaba;Serie A;Cuiaba;2001;4
-25;Juventude;Serie A;Caxias do Sul;1913;5
-26;Avai;Serie B;Florianopolis;1923;6
-27;Figueirense;Serie C;Florianopolis;1921;5
-28;Chapecoense;Serie B;Chapeco;1973;4
-29;Criciuma;Serie A;Criciuma;1947;5
-30;Paysandu;Serie B;Belem;1914;7
-31;Remo;Serie B;Belem;1905;6
-32;America Mineiro;Serie B;Belo Horizonte;1912;8
-33;Bragantino;Serie A;Braganca Paulista;1928;3
-34;Vila Nova;Serie B;Goiania;1943;4
-35;CRB;Serie B;Maceio;1912;5
-36;CSA;Serie C;Maceio;1913;4
-37;ABC;Serie C;Natal;1915;6
-38;America RN;Serie C;Natal;1915;4
-39;Confianca;Serie C;Aracaju;1936;3
-40;Sergipe;Serie D;Aracaju;1909;3
-41;Moto Club;Serie D;Sao Luis;1937;3
-42;Sampaio Correa;Serie C;Sao Luis;1923;4
-43;Tuna Luso;Serie D;Belem;1903;2
-44;Amazonas;Serie B;Manaus;2019;1
-45;Nacional AM;Serie D;Manaus;1913;3
-46;Rio Branco;Serie D;Rio Branco;1919;2
-47;Galvez;Serie D;Rio Branco;2011;1
-48;Ypiranga;Serie C;Erechim;1924;2
-49;Brasil de Pelotas;Serie C;Pelotas;1911;3
-50;Pelotas;Serie D;Pelotas;1908;2
-51;Londrina;Serie C;Londrina;1956;2
-52;Operario PR;Serie B;Ponta Grossa;1912;2
-53;Parana Clube;Serie D;Curitiba;1989;2
-54;Joinville;Serie D;Joinville;1976;2
-55;Brusque;Serie B;Brusque;1987;2
+1;Flamengo;Serie A;Rio de Janeiro;1895;15
+2;Palmeiras;Serie A;Sao Paulo;1914;18
+3;Cruzeiro;Serie B;Belo Horizonte;1921;10
+4;Sao Paulo;Serie A;Sao Paulo;1930;12
+5;Santos;Serie B;Santos;1912;15
+6;Gremio;Serie A;Porto Alegre;1903;9
+7;Internacional;Serie A;Porto Alegre;1909;8
+8;Fluminense;Serie A;Rio de Janeiro;1902;6
+9;Vasco da Gama;Serie B;Rio de Janeiro;1898;6
+10;Botafogo;Serie A;Rio de Janeiro;1904;3
+11;Corinthians;Serie A;Sao Paulo;1910;11
+12;Atletico Mineiro;Serie A;Belo Horizonte;1908;7
+13;Bahia;Serie A;Salvador;1931;2
+14;Vitoria;Serie A;Salvador;1899;1
+15;Fortaleza;Serie A;Fortaleza;1918;2
+16;Ceara;Serie B;Fortaleza;1914;1
+17;Sport;Serie B;Recife;1905;3
+18;Santa Cruz;Serie C;Recife;1914;0
+19;Nautico;Serie B;Recife;1901;0
+20;Coritiba;Serie B;Curitiba;1909;1
+21;Athletico Paranaense;Serie A;Curitiba;1924;5
+22;Goias;Serie B;Goiania;1943;0
+23;Atletico Goianiense;Serie A;Goiania;1937;0
+24;Cuiaba;Serie A;Cuiaba;2001;0
+25;Juventude;Serie A;Caxias do Sul;1913;1
+26;Avai;Serie B;Florianopolis;1923;0
+27;Figueirense;Serie C;Florianopolis;1921;0
+28;Chapecoense;Serie B;Chapeco;1973;2
+29;Criciuma;Serie A;Criciuma;1947;1
+30;Paysandu;Serie B;Belem;1914;3
+31;Remo;Serie B;Belem;1905;1
+32;America Mineiro;Serie B;Belo Horizonte;1912;0
+33;Bragantino;Serie A;Braganca Paulista;1928;1
+34;Vila Nova;Serie B;Goiania;1943;0
+35;CRB;Serie B;Maceio;1912;0
+36;CSA;Serie C;Maceio;1913;0
+37;ABC;Serie C;Natal;1915;0
+38;America RN;Serie C;Natal;1915;0
+39;Confianca;Serie C;Aracaju;1936;0
+40;Sergipe;Serie D;Aracaju;1909;0
+41;Moto Club;Serie D;Sao Luis;1937;0
+42;Sampaio Correa;Serie C;Sao Luis;1923;3
+43;Tuna Luso;Serie D;Belem;1903;0
+44;Amazonas;Serie B;Manaus;2019;0
+45;Nacional AM;Serie D;Manaus;1913;0
+46;Rio Branco;Serie D;Rio Branco;1919;0
+47;Galvez;Serie D;Rio Branco;2011;0
+48;Ypiranga;Serie C;Erechim;1924;0
+49;Brasil de Pelotas;Serie C;Pelotas;1911;1
+50;Pelotas;Serie D;Pelotas;1908;0
+51;Londrina;Serie C;Londrina;1956;1
+52;Operario PR;Serie B;Ponta Grossa;1912;0
+53;Parana Clube;Serie D;Curitiba;1989;1
+54;Joinville;Serie D;Joinville;1976;1
+55;Brusque;Serie B;Brusque;1987;0
 56;Ituano;Serie B;Itu;1947;1
-57;Mirassol;Serie B;Mirassol;1925;1
-58;Novorizontino;Serie B;Novo Horizonte;2010;1
-59;Ponte Preta;Serie B;Campinas;1900;3
+57;Mirassol;Serie B;Mirassol;1925;0
+58;Novorizontino;Serie B;Novo Horizonte;2010;0
+59;Ponte Preta;Serie B;Campinas;1900;0
 60;Guarani;Serie B;Campinas;1911;2
 61;Portuguesa;Serie D;Sao Paulo;1920;3
-62;Santo Andre;Serie D;Santo Andre;1967;2
-63;Sao Caetano;Serie D;Sao Caetano;1989;2
-64;Botafogo SP;Serie B;Ribeirao Preto;1918;2
-65;Ferroviaria;Serie C;Araraquara;1950;1
-66;XV de Piracicaba;Serie D;Piracicaba;1913;1
+62;Santo Andre;Serie D;Santo Andre;1967;1
+63;Sao Caetano;Serie D;Sao Caetano;1989;1
+64;Botafogo SP;Serie B;Ribeirao Preto;1918;0
+65;Ferroviaria;Serie C;Araraquara;1950;2
+66;XV de Piracicaba;Serie D;Piracicaba;1913;0
 67;Inter de Limeira;Serie D;Limeira;1902;1
-68;Uniao Sao Joao;Serie D;Araras;1981;1
-69;América SP;Serie D;Sao Jose do Rio Preto;1946;1
-70;Marilia;Serie D;Marilia;1942;1
-71;Taubate;Serie D;Taubate;1914;1
-72;Comercial;Serie D;Ribeirao Preto;1911;1
-73;Sertaozinho;Serie D;Sertaozinho;1944;1
-74;Sao Bento;Serie D;Sorocaba;1913;1
-75;Oeste;Serie D;Barueri;1921;1
-76;Barueri;Serie D;Barueri;2001;1
-77;Audax;Serie D;Osasco;2003;1
+68;Uniao Sao Joao;Serie D;Araras;1981;0
+69;América SP;Serie D;Sao Jose do Rio Preto;1946;0
+70;Marilia;Serie D;Marilia;1942;0
+71;Taubate;Serie D;Taubate;1914;0
+72;Comercial;Serie D;Ribeirao Preto;1911;0
+73;Sertaozinho;Serie D;Sertaozinho;1944;0
+74;Sao Bento;Serie D;Sorocaba;1913;0
+75;Oeste;Serie D;Barueri;1921;0
+76;Barueri;Serie D;Barueri;2001;0
+77;Audax;Serie D;Osasco;2003;0
 78;Red Bull Brasil;Serie D;Campinas;2007;1
-79;Juventus SP;Serie D;Sao Paulo;1924;1
-80;Portuguesa Santista;Serie D;Santos;1917;1
-81;Bangu;Serie D;Rio de Janeiro;1904;2
-82;America RJ;Serie D;Rio de Janeiro;1904;1
-83;Madureira;Serie D;Rio de Janeiro;1914;1
+79;Juventus SP;Serie D;Sao Paulo;1924;0
+80;Portuguesa Santista;Serie D;Santos;1917;0
+81;Bangu;Serie D;Rio de Janeiro;1904;1
+82;America RJ;Serie D;Rio de Janeiro;1904;7
+83;Madureira;Serie D;Rio de Janeiro;1914;0
 84;Volta Redonda;Serie C;Volta Redonda;1976;1
-85;Boavista;Serie D;Saquarema;2004;1
-86;Cabofriense;Serie D;Cabo Frio;1955;1
-87;Resende;Serie D;Resende;1909;1
-88;Friburguense;Serie D;Nova Friburgo;1980;1
-89;Nova Iguacu;Serie D;Nova Iguacu;1990;1
-90;Portuguesa RJ;Serie D;Rio de Janeiro;1924;1
-91;Caxias;Serie C;Caxias do Sul;1935;2
-92;Sao Jose RS;Serie C;Porto Alegre;1913;1
-93;Farroupilha;Serie D;Pelotas;1903;1
-94;Avenida;Serie D;Santa Cruz do Sul;1944;1
-95;Sao Luiz;Serie D;Ijui;1938;1
+85;Boavista;Serie D;Saquarema;2004;0
+86;Cabofriense;Serie D;Cabo Frio;1955;0
+87;Resende;Serie D;Resende;1909;0
+88;Friburguense;Serie D;Nova Friburgo;1980;0
+89;Nova Iguacu;Serie D;Nova Iguacu;1990;0
+90;Portuguesa RJ;Serie D;Rio de Janeiro;1924;0
+91;Caxias;Serie C;Caxias do Sul;1935;1
+92;Sao Jose RS;Serie C;Porto Alegre;1913;0
+93;Farroupilha;Serie D;Pelotas;1903;0
+94;Avenida;Serie D;Santa Cruz do Sul;1944;0
+95;Sao Luiz;Serie D;Ijui;1938;0
 96;Novo Hamburgo;Serie D;Novo Hamburgo;1911;1
-97;Gloria;Serie D;Vacaria;1956;1
-98;Veranopolis;Serie D;Veranopolis;1992;1
-99;Passo Fundo;Serie D;Passo Fundo;1986;1
-100;Aimoré;Serie D;Sao Leopoldo;1936;1
+97;Gloria;Serie D;Vacaria;1956;0
+98;Veranopolis;Serie D;Veranopolis;1992;0
+99;Passo Fundo;Serie D;Passo Fundo;1986;0
+100;Aimoré;Serie D;Sao Leopoldo;1936;0
