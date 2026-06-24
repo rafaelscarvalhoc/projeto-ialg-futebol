@@ -1,3 +1,7 @@
+// Trabalho de ialg (introdução aos algoritimos)
+// Autores: Rafael Souza Carvalho Turma 10 A Jõao Gabriel Borges da Silva Turma 10 A
+// O tema do trabalho são times de futebol, incluindo id, nome do time, cidade sede, ano de fundação e contagem de titulos internacionais e nacionais, excluindo assim titulos estaduais e municipais. 
+
 #include <iostream>
 #include "funcoes.h" // para incluir o arquivo que contem o guia das funções :)
 
